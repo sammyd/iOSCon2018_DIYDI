@@ -4,4 +4,4 @@ This repo accompanies the lightning talk entitled "DIY DI", presented at iOSCon 
 
 ## Questions
 
-I'm sam—feel free to ask me questions—I'm [@iwanymyrealname](https://twitter.com/iwantmyrealname)on Twitter.
+I'm sam—feel free to ask me questions—I'm [@iwanymyrealname](https://twitter.com/iwantmyrealname) on Twitter.

@@ -184,8 +184,9 @@ protocol DataStoreProvider {
   var dataStore: DataStore { get }
 }
 
-protocol AnimationEngineProvider {
-  var animationEngine: AnimationEngine { get }
+protocol ViewControllerFactory {
+  func createBeautifulVC() -> UIViewController
+  ...
 }
 ```
 
@@ -194,7 +195,7 @@ protocol AnimationEngineProvider {
 ```swift
 class DependencyContainer: NetworkProvider,
                            DataStoreProvider,
-                           AnimationEngineProvider {
+                           ViewControllerFactory {
   ...
 }
 ```
@@ -204,7 +205,7 @@ class DependencyContainer: NetworkProvider,
 ```swift
 class MyViewController {
   typealias DependencyProvider = NetworkManagerProvider &
-                                 DataStoreProvider
+                                 ViewControllerFactory
   ...
 }
 ```
@@ -214,7 +215,7 @@ class MyViewController {
 ```swift
 class MyViewController {
   typealias DependencyProvider = NetworkManagerProvider &
-                                 DataStoreProvider
+                                 ViewControllerFactory
   private let provider: DependencyProvider
 
   ...
@@ -226,26 +227,24 @@ class MyViewController {
 ```swift
 class MyViewController {
   typealias DependencyProvider = NetworkManagerProvider &
-                                 DataStoreProvider
-  private let provider: DependencyProvider
-
-  private lazy var dataStore = provider.dataStore
-  private lazy var networkManager = provider.networkManager
-
-  ...
-}
-```
-
----
-
-```swift
-class MyViewController {
-  typealias DependencyProvider = NetworkManagerProvider &
-                                 DataStoreProvider
+                                 ViewControllerFactory
   private let provider: DependencyProvider
 
   private lazy var dataStore = provider.dataStore
-  private lazy var networkManager = provider.networkManager
+
+  ...
+}
+```
+
+---
+
+```swift
+class MyViewController {
+  typealias DependencyProvider = NetworkManagerProvider &
+                                 ViewControllerFactory
+  private let provider: DependencyProvider
+
+  private lazy var dataStore = provider.dataStore
 
   init(dependencyProvider: DependencyProvider) {
     self.dependencyProvider = dependencyProvider

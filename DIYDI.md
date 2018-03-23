@@ -106,27 +106,27 @@ let manager = Manager.shared
 
 ---
 
-![](images/pic1.png)
+![fit](images/pic1.png)
 
 ---
 
-![](images/pic2.png)
+![fit](images/pic2.png)
 
 ---
 
-![](images/pic3.png)
+![fit](images/pic3.png)
 
 ---
 
-![](images/pic4.png)
+![fit](images/pic4.png)
 
 ---
 
-![](images/pic5.png)
+![fit](images/pic5.png)
 
 ---
 
-![](images/pic6.png)
+![fit](images/pic6.png)
 
 ---
 
@@ -140,7 +140,7 @@ let manager = Manager.shared
 
 ---
 
-![](images/pic7.png)
+![fit](images/pic7.png)
 
 ---
 
